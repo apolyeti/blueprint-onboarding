@@ -21,12 +21,12 @@ function WinningLine({ line, gridRef }) {
   const gridBounds = gridRef.current.getBoundingClientRect();
   const squareSize = gridBounds.width / 3;
 
-  const diagonalOffset = squareSize * 0.01;
+  const diagonalOffset = squareSize * 0;
 
   const gridDiagonal = Math.sqrt(
     Math.pow(gridBounds.width, 2) + Math.pow(gridBounds.height, 2)
   );
-  const extraExtension = gridDiagonal * 0.0;
+  const extraExtension = gridDiagonal * 0;
 
   const lines = [
     {
@@ -114,11 +114,12 @@ function WinningLine({ line, gridRef }) {
         x2={x2}
         y2={y2}
         stroke="black"
-        strokeWidth="5"
+        strokeWidth="3"
         strokeDasharray={lineLength}
         strokeDashoffset={isVisible ? "0" : lineLength}
         style={{
           transition: "stroke-dashoffset 0.5s ease-in-out",
+          lineLength: lineLength,
         }}
       />
     </svg>
